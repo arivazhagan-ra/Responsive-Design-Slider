@@ -28,12 +28,14 @@ const showSlider =(type) => {
 seeBtn.forEach(button => {
     button.onclick = function(){
         carousel.classList.add('show');
+        document.querySelector("header").classList.add("hide-menu");
         console.log('See button clicked:', button);
     }
 });
 
 backBtn.onclick = function(){
     carousel.classList.remove('show');
+    document.querySelector("header").classList.remove("hide-menu");
     console.log('Back button clicked');
 }
 

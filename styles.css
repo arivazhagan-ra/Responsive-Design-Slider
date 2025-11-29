@@ -43,7 +43,14 @@ body{
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-background-image: linear-gradient(to right bottom, #85888c, #949b9e, #a4afae, #b8c2bc, #d1d4ca);  z-index: -1;
+background: linear-gradient(
+    to bottom right,
+    #FF8A7A,
+    #FFB4A2,
+    #D8A5F2 60%
+);
+
+  z-index: -1;
 }
 
 header{
@@ -99,6 +106,9 @@ header ul li a{
     width: 70%;
     height: 100%;
     transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease, left .5s;
+}
+.item img {
+    transition: opacity 0.5s ease, right .7s;
 }
 .container .swiper .item img{
     position: absolute;
@@ -525,8 +535,8 @@ hr{
     header{
     display: flex;
     flex-direction: column;
-    width: 100%;
     position: absolute;
+    width: 100%;
     gap: 20px;
 }
 header nav a{
@@ -535,15 +545,22 @@ header nav a{
 }
 header ul{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 90%;
-    margin:0;
+    margin-left:55%;
+    margin-top: -5%;
     padding-bottom: 10px;
     font-size: 1em;
+    flex-wrap: wrap;
+    gap: .6em;
+    font-size: .8em;
 }
 }
 
-@media screen and (max-width:400px){
+@media screen and (max-width:443px){
+    .container .swiper .item img{
+        top: 60%;
+    }
      .container .swiper .item:nth-child(2){       
          width: 100%;
          height: 90%;
@@ -553,7 +570,7 @@ header ul{
         width: auto;
     }
     .container .swiper .item:nth-child(2) .content{
-        top: 15%;
+        top: 30%;
     }
     .container .swiper .item:nth-child(2) .content .title{
         width: 100%;
@@ -598,4 +615,8 @@ header ul{
     align-items: center;
     justify-content: space-between;
 }
+header.hide-menu ul {
+        display: none !important;
+    }
+
 }
